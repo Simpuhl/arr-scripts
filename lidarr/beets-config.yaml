@@ -61,7 +61,7 @@ import:
     quiet_fallback: skip
     timid: no
     duplicate_action: skip
-    log: /config/extended/beets.log
+    log: /var/lib/lidarr/config/extended/beets.log
     languages: ['en']
     group_albums: no
 
@@ -81,5 +81,5 @@ lastgenre:
     prefer_specific: no
     source: album
     separator: '; '
-    whitelist: /config/extended/beets-genre-whitelist.txt
+    whitelist: /var/lib/lidarr/config/extended/beets-genre-whitelist.txt
     title_case: yes
