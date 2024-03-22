@@ -3,9 +3,9 @@ scriptVersion="2.1"
 scriptName="AutoArtistAdder"
 
 ### Import Settings
-source /config/extended.conf
+source /var/lib/lidarr/config/extended.conf
 #### Import Functions
-source /config/extended/functions
+source /var/lib/lidarr/config/extended/functions
 
 verifyConfig () {
  
