@@ -3,9 +3,9 @@ scriptVersion="1.3"
 scriptName="UnmappedFilesCleaner"
 
 #### Import Settings
-source /config/extended.conf
+source /var/lib/lidarr/config/extended.conf
 #### Import Functions
-source /config/extended/functions
+source /var/lib/lidarr/config/extended/functions
 
 verifyConfig () {
   if [ "$enableUnmappedFilesCleaner" != "true" ]; then
