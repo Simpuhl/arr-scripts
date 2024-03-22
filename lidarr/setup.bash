@@ -91,7 +91,7 @@ curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/ARLChecke
 
 echo "Done"
 
-mkdir -p /config/extended
+mkdir -p /var/lib/lidarr/config/extended
 echo "Download Script Functions..."
 curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/universal/functions.bash -o /var/lib/lidarr/config/extended/functions
 echo "Done"
@@ -104,13 +104,13 @@ echo "Download SMA config..."
 curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/sma.ini -o /var/lib/lidarr/config/extended/sma.ini 
 echo "Done"
 
-if [ ! -f /config/extended/beets-config.yaml ]; then
+if [ ! -f /var/lib/lidarr/config/extended/beets-config.yaml ]; then
 	echo "Download Beets config..."
 	curl "https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/beets-config.yaml" -o /var/lib/lidarr/config/extended/beets-config.yaml
 	echo "Done"
 fi
 
-if [ ! -f /config/extended/beets-config-lidarr.yaml ]; then
+if [ ! -f /var/lib/lidarr/config/extended/beets-config-lidarr.yaml ]; then
 	echo "Download Beets lidarr config..."
 	curl "https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/beets-config-lidarr.yaml" -o /var/lib/lidarr/config/extended/beets-config-lidarr.yaml
 	echo "Done"
@@ -136,13 +136,13 @@ echo "Download Beets Tagger script..."
 curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/BeetsTagger.bash -o /var/lib/lidarr/config/extended/BeetsTagger.bash
 echo "Done"
 
-if [ ! -f /config/extended/beets-genre-whitelist.txt ]; then
+if [ ! -f /var/lib/lidarr/config/extended/beets-genre-whitelist.txt ]; then
 	echo "Download beets-genre-whitelist.txt..."
 	curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/beets-genre-whitelist.txt -o /var/lib/lidarr/config/extended/beets-genre-whitelist.txt
 	echo "Done"
 fi
 
-if [ ! -f /config/extended.conf ]; then
+if [ ! -f /var/lib/lidarr/config/extended.conf ]; then
 	echo "Download Extended config..."
 	curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/extended.conf -o /var/lib/lidarr/config/extended.conf
 	chmod 777 /var/lib/lidarr/config/extended.conf
