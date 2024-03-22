@@ -24,7 +24,7 @@ if [ -z "$lidarr_album_id" ]; then
 fi
 
 if [ "$enableBeetsTagging" != "true" ]; then
-  log "Beets tagging is disabled, please enable by setting \"enableBeetsTagging=true\" in \"/config/extended.conf\""
+  log "Beets tagging is disabled, please enable by setting \"enableBeetsTagging=true\" in \"/var/lib/lidarr/config/extended.conf\""
   exit 0
 fi
 
@@ -57,24 +57,24 @@ ProcessWithBeets () {
 
 	# Input
 	# $1 Download Folder to process
-	if [ -f /config/extended/library-lidarr.blb ]; then
-		rm /config/extended/library-lidarr.blb
+	if [ -f /var/lib/lidarr/config/extended/library-lidarr.blb ]; then
+		rm /var/lib/lidarr/config/extended/library-lidarr.blb
 		sleep 0.5
 	fi
-	if [ -f /config/extended/extended/beets-lidarr.log ]; then 
-		rm /config/extended/extended/beets-lidarr.log
+	if [ -f /var/lib/lidarr/config/extended/extended/beets-lidarr.log ]; then 
+		rm /var/lib/lidarr/config/extended/extended/beets-lidarr.log
 		sleep 0.5
 	fi
 
-	if [ -f "/config/extended/beets-lidarr-match" ]; then 
-		rm "/config/extended/beets-lidarr-match"
+	if [ -f "/var/lib/lidarr/config/extended/beets-lidarr-match" ]; then 
+		rm "/var/lib/lidarr/config/extended/beets-lidarr-match"
 		sleep 0.5
 	fi
-	touch "/config/extended/beets-lidarr-match"
+	touch "/var/lib/lidarr/config/extended/beets-lidarr-match"
 	sleep 0.5
 
         log "$1 :: Begin matching with beets!"
-	beet -c /config/extended/beets-config-lidarr.yaml -l /config/extended/library-lidarr.blb -d "$1" import -qC "$1" 2>&1 | tee -a "/config/logs/$logFileName"
+	beet -c /var/lib/lidarr/config/extended/beets-config-lidarr.yaml -l /var/lib/lidarr/config/extended/library-lidarr.blb -d "$1" import -qC "$1" 2>&1 | tee -a "/var/lib/lidarr/config/logs/$logFileName"
 	# Fix tags
 	log "$1 :: Fixing Tags..."
 		
@@ -105,17 +105,17 @@ ProcessWithBeets () {
 	log "$1 :: Fixing Tags Complete!"	
 	
 
-	if [ -f "/config/extended/beets-lidarr-match" ]; then 
-		rm "/config/extended/beets-lidarr-match"
+	if [ -f "/var/lib/lidarr/config/extended/beets-lidarr-match" ]; then 
+		rm "/var/lib/lidarr/config/extended/beets-lidarr-match"
 		sleep 0.5
 	fi
 
-	if [ -f /config/extended/library-lidarr.blb ]; then
-		rm /config/extended/library-lidarr.blb
+	if [ -f /var/lib/lidarr/config/extended/library-lidarr.blb ]; then
+		rm /var/lib/lidarr/config/extended/library-lidarr.blb
 		sleep 0.5
 	fi
-	if [ -f /config/extended/logs/beets.log ]; then 
-		rm /config/extended/logs/beets.log
+	if [ -f /var/lib/lidarr/config/extended/logs/beets.log ]; then 
+		rm /var/lib/lidarr/config/extended/logs/beets.log
 		sleep 0.5
 	fi
 
