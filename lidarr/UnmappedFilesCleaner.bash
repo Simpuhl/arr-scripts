@@ -9,7 +9,7 @@ source /var/lib/lidarr/config/extended/functions
 
 verifyConfig () {
   if [ "$enableUnmappedFilesCleaner" != "true" ]; then
-    log "Script is not enabled, enable by setting enableUnmappedFilesCleaner to \"true\" by modifying the \"/config/extended.conf\" config file..."
+    log "Script is not enabled, enable by setting enableUnmappedFilesCleaner to \"true\" by modifying the \"/var/lib/lidarr/config/extended.conf\" config file..."
     log "Sleeping (infinity)"
     sleep infinity
   fi
