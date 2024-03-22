@@ -52,40 +52,40 @@ echo "************ install pip dependencies ************" && \
 python3 -m pip install --upgrade pip && \
 pip3 install -r ${SMA_PATH}/setup/requirements.txt
 
-mkdir -p /custom-services.d
+mkdir -p /var/lib/lidarr/custom-services.d
 
 echo "Download QueueCleaner service..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/universal/services/QueueCleaner -o /custom-services.d/QueueCleaner
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/universal/services/QueueCleaner -o /var/lib/lidarr/custom-services.d/QueueCleaner
 echo "Done"
 
 echo "Download AutoConfig service..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/AutoConfig.service.bash -o /custom-services.d/AutoConfig
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/AutoConfig.service.bash -o /var/lib/lidarr/custom-services.d/AutoConfig
 echo "Done"
 
 echo "Download Video service..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/Video.service.bash -o /custom-services.d/Video
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/Video.service.bash -o /var/lib/lidarr/custom-services.d/Video
 echo "Done"
 
 echo "Download Tidal Video Downloader service..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/TidalVideoDownloader.bash -o /custom-services.d/TidalVideoDownloader
+curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/TidalVideoDownloader.bash -o /var/lib/lidarr/custom-services.d/TidalVideoDownloader
 echo "Done"
 
 echo "Download Audio service..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/Audio.service.bash -o /custom-services.d/Audio
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/Audio.service.bash -o /var/lib/lidarr/custom-services.d/Audio
 echo "Done"
 
 echo "Download AutoArtistAdder service..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/AutoArtistAdder.bash -o /custom-services.d/AutoArtistAdder
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/AutoArtistAdder.bash -o /var/lib/lidarr/custom-services.d/AutoArtistAdder
 echo "Done"
 
 echo "Download UnmappedFilesCleaner service..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/UnmappedFilesCleaner.bash -o /custom-services.d/UnmappedFilesCleaner
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/UnmappedFilesCleaner.bash -o /var/lib/lidarr/custom-services.d/UnmappedFilesCleaner
 echo "Done"
 
 mkdir -p /custom-services.d/python
 echo "Download ARLChecker service..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/python/ARLChecker.py -o /custom-services.d/python/ARLChecker.py
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/ARLChecker -o /custom-services.d/ARLChecker
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/python/ARLChecker.py -o /var/lib/lidarr/custom-services.d/python/ARLChecker.py
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/ARLChecker -o /var/lib/lidarr/custom-services.d/ARLChecker
 
 
 
@@ -93,62 +93,62 @@ echo "Done"
 
 mkdir -p /config/extended
 echo "Download Script Functions..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/universal/functions.bash -o /config/extended/functions
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/universal/functions.bash -o /var/lib/lidarr/config/extended/functions
 echo "Done"
 
 echo "Download PlexNotify script..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/PlexNotify.bash -o /config/extended/PlexNotify.bash 
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/PlexNotify.bash -o /var/lib/lidarr/config/extended/PlexNotify.bash 
 echo "Done"
 
 echo "Download SMA config..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/sma.ini -o /config/extended/sma.ini 
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/sma.ini -o /var/lib/lidarr/config/extended/sma.ini 
 echo "Done"
 
 if [ ! -f /config/extended/beets-config.yaml ]; then
 	echo "Download Beets config..."
-	curl "https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/beets-config.yaml" -o /config/extended/beets-config.yaml
+	curl "https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/beets-config.yaml" -o /var/lib/lidarr/config/extended/beets-config.yaml
 	echo "Done"
 fi
 
 if [ ! -f /config/extended/beets-config-lidarr.yaml ]; then
 	echo "Download Beets lidarr config..."
-	curl "https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/beets-config-lidarr.yaml" -o /config/extended/beets-config-lidarr.yaml
+	curl "https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/beets-config-lidarr.yaml" -o /var/lib/lidarr/config/extended/beets-config-lidarr.yaml
 	echo "Done"
 fi
 
 echo "Download Deemix config..."
-curl "https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/deemix_config.json" -o /config/extended/deemix_config.json
+curl "https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/deemix_config.json" -o /var/lib/lidarr/config/extended/deemix_config.json
 echo "Done"
 
 echo "Download Tidal config..."
-curl "https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/tidal-dl.json" -o /config/extended/tidal-dl.json
+curl "https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/tidal-dl.json" -o /var/lib/lidarr/config/extended/tidal-dl.json
 echo "Done"
 
 echo "Download LyricExtractor script..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/LyricExtractor.bash -o /config/extended/LyricExtractor.bash
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/LyricExtractor.bash -o /var/lib/lidarr/config/extended/LyricExtractor.bash
 echo "Done"
 
 echo "Download ArtworkExtractor script..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/ArtworkExtractor.bash -o /config/extended/ArtworkExtractor.bash
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/ArtworkExtractor.bash -o /var/lib/lidarr/config/extended/ArtworkExtractor.bash
 echo "Done"
 
 echo "Download Beets Tagger script..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/BeetsTagger.bash -o /config/extended/BeetsTagger.bash
+curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/BeetsTagger.bash -o /var/lib/lidarr/config/extended/BeetsTagger.bash
 echo "Done"
 
 if [ ! -f /config/extended/beets-genre-whitelist.txt ]; then
 	echo "Download beets-genre-whitelist.txt..."
-	curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/beets-genre-whitelist.txt -o /config/extended/beets-genre-whitelist.txt
+	curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/beets-genre-whitelist.txt -o /var/lib/lidarr/config/extended/beets-genre-whitelist.txt
 	echo "Done"
 fi
 
 if [ ! -f /config/extended.conf ]; then
 	echo "Download Extended config..."
-	curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/lidarr/extended.conf -o /config/extended.conf
-	chmod 777 /config/extended.conf
+	curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/extended.conf -o /var/lib/lidarr/config/extended.conf
+	chmod 777 /var/lib/lidarr/config/extended.conf
 	echo "Done"
 fi
 
-chmod 777 -R /config/extended
+chmod 777 -R /var/lib/lidarr/config/extended
 chmod 777 -R /root
 exit
