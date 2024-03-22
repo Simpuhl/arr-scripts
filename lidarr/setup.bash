@@ -82,7 +82,7 @@ echo "Download UnmappedFilesCleaner service..."
 curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/UnmappedFilesCleaner.bash -o /var/lib/lidarr/custom-services.d/UnmappedFilesCleaner
 echo "Done"
 
-mkdir -p /custom-services.d/python
+mkdir -p /var/lib/lidarr/custom-services.d/python
 echo "Download ARLChecker service..."
 curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/python/ARLChecker.py -o /var/lib/lidarr/custom-services.d/python/ARLChecker.py
 curl https://raw.githubusercontent.com/Simpuhl/arr-scripts/main/lidarr/ARLChecker -o /var/lib/lidarr/custom-services.d/ARLChecker
