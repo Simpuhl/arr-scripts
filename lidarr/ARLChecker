@@ -4,9 +4,9 @@ scriptVersion="1.6"
 scriptName="ARLChecker"
 sleepInterval='24h'
 ### Import Settings
-source /config/extended.conf
+source /var/lib/lidarr/config/extended.conf
 #### Import Functions
-source /config/extended/functions
+source /var/lib/lidarr/config/extended/functions
 
 if [ "$dlClientSource" == "tidal" ]; then
     log "Script is not enabled, enable by setting dlClientSource to \"deezer\" or \"both\" by modifying the \"/config/extended.conf\" config file..."
@@ -16,7 +16,7 @@ fi
 
 log "Starting ARL Token Check..."
 # run py script
-python /custom-services.d/python/ARLChecker.py -c
+python /var/lib/lidarr/custom-services.d/python/ARLChecker.py -c
 
 # If variable doesn't exist, or not set by user in extended.conf, fallback to 24h
 # See issue #189
