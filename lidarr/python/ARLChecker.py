@@ -10,13 +10,13 @@ import logging
 import os
 from datetime import datetime
 
-CUSTOM_INIT_PATH = '/custom-cont_init.d/'
-CUSTOM_SERVICES_PATH = '/custom-services.d/'
+CUSTOM_INIT_PATH = 'http://var/lib/lidarr/custom-cont_init.d/'
+CUSTOM_SERVICES_PATH = 'http://var/lib/lidarr/custom-services.d/'
 STATUS_FALLBACK_LOCATION = '/custom-services.d/python/ARLStatus.txt'
-EXTENDED_CONF_PATH = '/config/extended.conf'
-NOT_FOUND_PATH = '/config/extended/logs/notfound'
-FAILED_DOWNLOADS_PATH = '/config/extended/logs/downloaded/failed/deezer'
-LOG_FILES_DIRECTORY = '/config/logs'
+EXTENDED_CONF_PATH = 'http://var/lib/lidarr/config/extended.conf'
+NOT_FOUND_PATH = 'http://var/lib/lidarr/config/extended/logs/notfound'
+FAILED_DOWNLOADS_PATH = 'http://var/lib/lidarr/config/extended/logs/downloaded/failed/deezer'
+LOG_FILES_DIRECTORY = 'http://var/lib/lidarr/config/logs'
 DEBUG_ROOT_PATH = './env'
 
 # Web agent used to access Deezer
